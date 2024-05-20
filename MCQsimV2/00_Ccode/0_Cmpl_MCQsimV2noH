@@ -1,0 +1,2 @@
+mpicc MCQsim_Main_v2noH.c   MCQsim_StrainHS_v2.c  -lmpich  -lgsl  -lgslcblas  -lm  -Wall  -O3  -o  MCQsimV2noH
+
