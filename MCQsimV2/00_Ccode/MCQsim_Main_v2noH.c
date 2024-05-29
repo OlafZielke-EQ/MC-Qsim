@@ -352,32 +352,32 @@ int main(int argc, char **argv)
             fprintf(stdout,"----------------------\n");
             fprintf(stdout,"System info: Byte Size for FLOAT: %lu     unsigned INT: %lu    \n", sizeof(float), sizeof(unsigned int));
             fprintf(stdout,"----------------------\n");
-            fprintf(stdout,"FileName:           %s\n",cInputName);                      fprintf(stdout,"RunNumber:          %u\n",uRunNum);
-            fprintf(stdout,"CatalogType:        %u\n",uCatType);                        fprintf(stdout,"PlotCat2Screen:     %u\n",uPlotCatalog2Screen);            
-            fprintf(stdout,"SeedLocation:       %ld\n",lSeed);                          fprintf(stdout,"MinElem4Catalog:    %u\n",uMinElemNum4Cat);            
-            fprintf(stdout,"ContPreviousRun:    %u\n",uContPrevRun);                    fprintf(stdout,"LoadPrev_Kh_mat:    %u\n",uLoadPrev_Kmat);  
-            fprintf(stdout,"K_mat file name:    %s\n",cKmatFileName);                  
+            fprintf(stdout,"FileName:               %s\n",cInputName);                      fprintf(stdout,"RunNumber:              %u\n",uRunNum);
+            fprintf(stdout,"CatalogType:            %u\n",uCatType);                        fprintf(stdout,"PlotCat2Screen:         %u\n",uPlotCatalog2Screen);
+            fprintf(stdout,"SeedLocation:           %ld\n",lSeed);                          fprintf(stdout,"MinElem4Catalog:        %u\n",uMinElemNum4Cat);
+            fprintf(stdout,"ContPreviousRun:        %u\n",uContPrevRun);                    fprintf(stdout,"LoadPrev_Kh_mat:        %u\n",uLoadPrev_Kmat);
+            fprintf(stdout,"Kh_mat file name:       %s\n",cKmatFileName);                  
             fprintf(stdout,"----------------------\n");  
-            fprintf(stdout,"SaveSTF4LargeEQ:    %u\n",uStoreSTF4LargeEQs);              fprintf(stdout,"MinMag2SaveSTF:     %f\n",fMinMag4STF); 
+            fprintf(stdout,"SaveSTF4LargeEQ:        %u\n",uStoreSTF4LargeEQs);              fprintf(stdout,"MinMag2SaveSTF:         %f\n",fMinMag4STF); 
             fprintf(stdout,"UseTime4RuptProp:       THIS IS NOT USED/INCLUDED IN V2p5\n");  fprintf(stdout,"MinMag2UseRuptProp:     THIS IS NOT USED/INCLUDED IN V2p5\n");
             fprintf(stdout,"----------------------\n"); 
-            fprintf(stdout,"IntSeisTimeStep:    %2.3f days\n",fIntSeisLoadStep);        fprintf(stdout,"LoadSteps_POW2:     %u\n",uLoadStep_POW2);  
+            fprintf(stdout,"IntSeisTimeStep:        %fdays\n",fIntSeisLoadStep);            fprintf(stdout,"LoadSteps_POW2:         %u\n",uLoadStep_POW2);
             fprintf(stdout,"----------------------\n"); 
-            fprintf(stdout,"ViscAftSlip:        %3.1f\n",fAfterSlipTime);               fprintf(stdout,"ViscDeepRelax:      %3.1f\n",fDeepRelaxTime);
+            fprintf(stdout,"ViscAftSlipTime:        %fyears\n",fAfterSlipTime);             fprintf(stdout,"ViscDeepRelaxTime:      %fyears\n",fDeepRelaxTime);
             fprintf(stdout,"----------------------\n"); 
-            fprintf(stdout,"CoSeisHealFract:  %5.2f\n",fHealFact);                      fprintf(stdout,"OvershootFract:   %5.2f\n",fOvershootFract);
-            fprintf(stdout,"PreStressFract:   %5.2f\n",fPreStressFract);                fprintf(stdout,"MinCoSeisSlipRate (m/s):  %e\n",fMinCoSeisSlipRate);
+            fprintf(stdout,"CoSeisHealFract:        %f\n",fHealFact);                       fprintf(stdout,"OvershootFract:         %f\n",fOvershootFract);
+            fprintf(stdout,"PreStressFract:         %f\n",fPreStressFract);                 fprintf(stdout,"MinCoSeisSlipRate(m/s): %f\n",fMinCoSeisSlipRate);
             fprintf(stdout,"----------------------\n"); 
-            fprintf(stdout,"RecLength:          %5.1lf\n",dRecordLength);               
-            fprintf(stdout,"----------------------\n"); 
+            fprintf(stdout,"RecLength:              %lf\n",dRecordLength);
+            fprintf(stdout,"----------------------\n");
             fprintf(stdout,"Elastic properties\n");
-            fprintf(stdout,"Medium density (kg/m^3):   %6.2f\n",fModPara[0]);           fprintf(stdout,"AddedNormalStress (MPa):  %6.2f\n",fModPara[1]);
-            fprintf(stdout,"ShearModulus (Pa):         %e\n",fModPara[2]);              fprintf(stdout,"PoissonRatio:             %6.3f\n",fModPara[3]);
+            fprintf(stdout,"Medium density (kg/m^3):   %e\n",fModPara[0]);              fprintf(stdout,"AddedNormalStress (MPa):   %e\n",fModPara[1]);
+            fprintf(stdout,"ShearModulus (Pa):         %e\n",fModPara[2]);              fprintf(stdout,"PoissonRatio:              %e\n",fModPara[3]);
             fprintf(stdout,"ChangeFricBtwEQs:          %u\n",uChgBtwEQs);               fprintf(stdout,"Lambda (Pa):               %e\n",fModPara[4]);
-            fprintf(stdout,"P-waveVelocity (m/s):      %6.3f\n",fModPara[5]);           fprintf(stdout,"vP/vS ratio:              %6.3f\n",fModPara[6]);
-            fprintf(stdout,"unit slip (m, fault):     %6.3f\n",fUnitSlipF);             fprintf(stdout,"unit slip (m, bound):     %6.3f\n",fUnitSlipB);
-            fprintf(stdout,"min. slip 2 start EQ (m):  %2.3e\n",fModPara[10]); 
-            fprintf(stdout,"coseis. timestep (s):      %2.3e\n",fModPara[7]);           fprintf(stdout,"mean height (m):           %6.3e\n",fMeanHeight); 
+            fprintf(stdout,"P-waveVelocity (m/s):      %e\n",fModPara[5]);              fprintf(stdout,"vP/vS ratio:               %e\n",fModPara[6]);
+            fprintf(stdout,"unit slip (m, fault):      %e\n",fUnitSlipF);               fprintf(stdout,"unit slip (m, bound):      %e\n",fUnitSlipB);
+            fprintf(stdout,"min. slip 2 start EQ (m):  %e\n",fModPara[10]); 
+            fprintf(stdout,"coseis. timestep (s):      %e\n",fModPara[7]);              fprintf(stdout,"mean height (m):           %e\n",fMeanHeight);  
             //-----------------------------
             float fTemp;
             fTemp = 100.0f - expf(-1.0f/fAfterSlipTime)*100.0f; //factor/fraction from decay function
@@ -583,7 +583,6 @@ int main(int argc, char **argv)
                     fTemp2 = MAX(fTemp0, fTemp1)/(-1.0f*fFRef[i*14 +1]); //friction coefficient...
                     fFFric[i*6 +2]  = fTemp2 - fOvershootFract*(fTemp2-fFFric[i*6 +1]); //this is arrest friction
                     //---------------------------------
-                    fFEvent[i*16 +7] *= ((fTemp2 - fFFric[i*6 +2])/(fTemp2 - fFFric[i*6 +1])); //updated Dc value => now adjusted for the breakdown all the way to arrest stress
                     fFEvent[i*16 +10] = (fFFric[i*6 +1] - fFFric[i*6 +2])*-1.0f*fFRef[i*14 +1];//this is overshoot stress (difference between arrest (lower) and dynamic (higher) strength)
                     //--------------------------------------------------------------------
                 }
@@ -1368,9 +1367,9 @@ int main(int argc, char **argv)
         for (i = 0u; i < iFOFFSET[iRANK]; i++)
         {   fTemp0   = sqrtf(fFEvent[i*16 +8]*fFEvent[i*16 +8] + fFEvent[i*16 +9]*fFEvent[i*16 +9]); //combined stressing rate (still in years)
             fTemp1   = fFEvent[i*16 +3]*-1.0f*fFEvent[i*16 +2]; //the element's current strength
-            fTemp2   = (1.0f - fPreStressFract)*ran0(&lSeed); //difference between "loading to failure" and prestressfraction multiplied by random number between 0 and 1 => e.g., if prestress is 0.8; then value is going to be (1.0f - 0.8f)*[0,1] i.e., between 0.0f and 0.2f 
-            fFEvent[i*16 +0] =  ((fTemp1*(fPreStressFract+fTemp2))/fTemp0) * fFEvent[i*16 +8];
-            fFEvent[i*16 +1] =  ((fTemp1*(fPreStressFract+fTemp2))/fTemp0) * fFEvent[i*16 +9];
+            fTemp2   = 0.5f*(1.0f - fPreStressFract)*(ran0(&lSeed)*2.0f -1.0f);
+            fFEvent[i*16 +0] = ((fTemp1*(fPreStressFract+fTemp2))/fTemp0) * fFEvent[i*16 +8];
+            fFEvent[i*16 +1] = ((fTemp1*(fPreStressFract+fTemp2))/fTemp0) * fFEvent[i*16 +9];
     }   } // pre-load the fault
     //------------------------------------------------------------------------------------
     //------------------------------------------------------------------------------------
@@ -1423,6 +1422,7 @@ int main(int argc, char **argv)
         //--------------------------------------------------------------------------------
         for (k = 0u; k <= (uLoadStep_POW2+1); k++)
         {   uPSeisSteps += (uEQcntr > 0u)*1u + (uEQcntr <= 0u)*0u;
+            fHypoSlip  = 0.0f;      fHypoLoc[0] = 0.0f;       fHypoLoc[1] = 0.0f;      fHypoLoc[2] = 0.0f;
             //-----------------------------------------------------------------------
             memset(fFslip,0, 2*uFPNum*sizeof(float));
             //-----------------------------------------------------------------------
@@ -1444,8 +1444,8 @@ int main(int argc, char **argv)
                 fTemp5 = MAX(0.0f, (fTemp1 -fTemp3));
                 //--------------------------
                 if (fTemp5 > MININTSEISSTRESSCHANGE)
-                {   fTemp3   = -1.0f*(((fTemp5/fTemp1)*fFTempVal[i*5 +0])/fFEvent[i*16 +4]);
-                    fTemp4   = -1.0f*(((fTemp5/fTemp1)*fFTempVal[i*5 +1])/fFEvent[i*16 +5]);
+                {   fTemp3 = -1.0f*(((fTemp5/fTemp1)*fFTempVal[i*5 +0])/fFEvent[i*16 +4]);
+                    fTemp4 = -1.0f*(((fTemp5/fTemp1)*fFTempVal[i*5 +1])/fFEvent[i*16 +5]);
                     fFTempVal[i*5 +4] = sqrtf(fTemp3*fTemp3 +fTemp4*fTemp4);
                     //--------------------------
                     uTemp1                = 1u;             uGlobPos              = i+ iFSTART[iRANK];
@@ -1469,23 +1469,21 @@ int main(int argc, char **argv)
             fTemp0 = MAX(0.0f, expf(-1.0f*(fPSeisTime +fNxtLoadStep)/fDeepRelaxTime));
             //--------------------------------------------
             for (i = 0u; i < iBOFFSET[iRANK]; i++)
-            {   fBTempVal[i*3 +0] = fBEvent[i*9 +0];
-                fBTempVal[i*3 +1] = fBEvent[i*9 +1];
-                fBTempVal[i*3 +2] = fBEvent[i*9 +2];
-                //--------------------------//--------------------------
+            {   fBTempVal[i*3 +0] = fBEvent[i*9 +0];         fBTempVal[i*3 +1] = fBEvent[i*9 +1];         fBTempVal[i*3 +2] = fBEvent[i*9 +2];
                 fTemp1 = sqrtf( fBTempVal[i*3 +0]*fBTempVal[i*3 +0] + fBTempVal[i*3 +1]*fBTempVal[i*3 +1] ); // combined (potentially releasable) shear stress on element
                 fTemp2 =   fabs(fBTempVal[i*3 +2]); //potentially releasable normal stress on element
                 fTemp3 = fTemp0*fBEvent[i*9 +7]; //permissible shear stress; amount of shear stress on element after last coseismic phase (absolute value) times postseis value => is permitted excess in stress at that point in time
                 fTemp4 = fTemp0*fBEvent[i*9 +8]; //permissible normal stress; amount of normal stress on element after last coseismic phase (absolute value)
                 //--------------------------
-                fTemp5 = MAX(0.0f, (fTemp1 -fTemp3));
-                fTemp6 = MAX(0.0f, (fTemp2 -fTemp4));
+                fTemp5 = MAX(0.0f, (fTemp1 -fTemp3));               fTemp6 = MAX(0.0f, (fTemp2 -fTemp4));
                 fTemp7 = sqrtf(fTemp5*fTemp5 + fTemp6*fTemp6);
                 //--------------------------
                 if (fTemp7 > MININTSEISSTRESSCHANGE)
-                {   fTemp3 = -1.0f*(((fTemp5/fTemp1)*fBTempVal[i*3 +0])/fBEvent[i*9 +4]);
-                    fTemp4 = -1.0f*(((fTemp5/fTemp1)*fBTempVal[i*3 +1])/fBEvent[i*9 +5]);
-                    fTemp5 = -1.0f*(((fTemp6/fTemp2)*fBTempVal[i*3 +2])/fBEvent[i*9 +6]);
+                {   fTemp1 = (fTemp1 <= 0.0f)*-1.0f + (fTemp1 > 0.0f)*fTemp1;
+                    fTemp2 = (fTemp2 <= 0.0f)*-1.0f + (fTemp2 > 0.0f)*fTemp2;
+                    fTemp3 = (fTemp1 <= 0.0f)*0.0f  + (fTemp1 > 0.0f)*(-1.0f*((fTemp5/fTemp1)*fBTempVal[i*3 +0])/fBEvent[i*9 +4]);
+                    fTemp4 = (fTemp1 <= 0.0f)*0.0f  + (fTemp1 > 0.0f)*(-1.0f*((fTemp5/fTemp1)*fBTempVal[i*3 +1])/fBEvent[i*9 +5]);
+                    fTemp5 = (fTemp2 <= 0.0f)*0.0f  + (fTemp2 > 0.0f)*(-1.0f*((fTemp6/fTemp2)*fBTempVal[i*3 +2])/fBEvent[i*9 +6]);
                     //--------------------------
                     uTemp2   = 1u;                          uGlobPos               = i+ iBSTART[iRANK];
                     fBslip[uGlobPos*3 +0] += fTemp3;        fBslip[uGlobPos*3 +1] += fTemp4;      fBslip[uGlobPos*3 +2] += fTemp5; 
@@ -1504,7 +1502,6 @@ int main(int argc, char **argv)
             }   }
             //-----------------------------------------------------------------------
             uEQstillOn = 0u;
-            fHypoSlip  = 0.0f;      fHypoLoc[0] = 0.0f;       fHypoLoc[1] = 0.0f;      fHypoLoc[2] = 0.0f;
             //------------------------
             for (i = 0u; i < iFOFFSET[iRANK]; i++)
             {   //----------------------------------------
@@ -1516,6 +1513,7 @@ int main(int argc, char **argv)
                 //---------------------------------
                 uTemp0 = (fTemp5 > fModPara[10])*1u + (fTemp5 <= fModPara[10])*0u;
                 uTemp0 = ((fTemp1-fTemp2) > fFEvent[i*16 +10])*uTemp0 + ((fTemp1-fTemp2) <= fFEvent[i*16 +10])*0u;
+                
                 uEQstillOn += uTemp0;
                 fTemp5 = (uTemp0 == 1u)*fTemp5 + (uTemp0 != 1u)*0.0f; 
                 //---------------------------------
@@ -1587,7 +1585,8 @@ int main(int argc, char **argv)
                 fFTempVal[i*5 +0] = fFEvent[i*16 +0];       fFTempVal[i*5 +1] = fFEvent[i*16 +1];       fFTempVal[i*5 +2] = fFEvent[i*16 +2];       fFTempVal[i*5 +3] = fFEvent[i*16 +3];
                 //-----------------------
                 fTemp0 = (fFFric[i*6 +2] *-1.0f *fFEvent[i*16 +2]) + fFRef[i*14 +2]*fFEvent[i*16 +7]; //this is arrest strength plus the stress/strength needed to achieve D_c slip (use arrest, b/c D_c was adjusted accordingly)
-                fFEvent[i*16 +3] = (uFEvent[i*5 +0] == 1)*fFEvent[i*16 +3]  +  (uFEvent[i*5 +0] != 1)*(fTemp0/(-1.0f *fFEvent[i*16 +2]));
+                fTemp0/= (-1.0f *fFEvent[i*16 +2]);
+                fFEvent[i*16 +3] = MAX(fFEvent[i*16 +3], fTemp0);
                 fFFric[i*6 +3]   = fFEvent[i*16 +3]; //the temprefFriction from which I decay from
                 fFFric[i*6 +5]   = fFEvent[i*16 +3]; //the temprefFriction to which I will heal
                 //-----------------------
@@ -1597,80 +1596,74 @@ int main(int argc, char **argv)
             while (uEQstillOn > 0u)
             {   uEQstillOn = 0u;
                 memset(fFslip,  0, 2*uFPNum*sizeof(float) );
+                
                 //----------------------------------------------------
                 for (i = 0u; i < iFOFFSET[iRANK]; i++)
                 {   fTemp2 = fFFric[i*6 +3] - (fFFric[i*6 +3] - fFFric[i*6 +2]) *(fFEvent[i*16 +12]/fFEvent[i*16 +7]);
                     fTemp2 = MAX(fTemp2, fFFric[i*6 +2]);//the weakening part
                     fTemp3 = fFEvent[i*16 +3] + fHealFact*(fFFric[i*6 +5] - fFEvent[i*16 +3]); //healing part, if element is not slipping 
                     //updating friction coefficient for elements that got activated already
-                    fFEvent[i*16 +3] = (uFEvent[i*5 +1] != 1u)*fFEvent[i*16 +3] +(uFEvent[i*5 +1] == 1u)*((fFEvent[i*16 +11] == 0.0f)*fTemp3  +(fFEvent[i*16 +11] != 0.0f)*fTemp2           );
-                    fFFric[i*6 +3]   = (uFEvent[i*5 +1] != 1u)*fFFric[i*6 +3]   +(uFEvent[i*5 +1] == 1u)*((fFEvent[i*16 +11] == 0.0f)*fTemp3  +(fFEvent[i*16 +11] != 0.0f)*fFFric[i*6 +3]   );
-                    fFEvent[i*16 +12]= (fFEvent[i*16 +11] != 0.0f)*fFEvent[i*16 +12]  +  (fFEvent[i*16 +11] == 0.0f)*0.0f;
+                    fFEvent[i*16 +3] = (uFEvent[i*5 +1] != 1u)*fFEvent[i*16 +3]       + (uFEvent[i*5 +1] == 1u)*((fFEvent[i*16 +11] == 0.0f)*fTemp3  + (fFEvent[i*16 +11] != 0.0f)*fTemp2           );
+                    fFFric[i*6 +3]   = (uFEvent[i*5 +1] != 1u)*fFFric[i*6 +3]         + (uFEvent[i*5 +1] == 1u)*((fFEvent[i*16 +11] == 0.0f)*fTemp3  + (fFEvent[i*16 +11] != 0.0f)*fFFric[i*6 +3]   );
+                    fFEvent[i*16 +12]= (fFEvent[i*16 +11] != 0.0f)*fFEvent[i*16 +12]  + (fFEvent[i*16 +11] == 0.0f)*0.0f;
                     //----------------------------------------------------
-                    fTemp0 = sqrtf( fFEvent[i*16 +0]*fFEvent[i*16 +0] + fFEvent[i*16 +1]*fFEvent[i*16 +1] ); //combined shear stress on element
-                    fFEvent[i*16 +2] = (fFEvent[i*16 +2] < 0.0f)*fFEvent[i*16 +2] + (fFEvent[i*16 +2] >= 0.0f)*0.0f; //make sure that normal stress does not get higher than zero (positive normal stress == tension) => this is b/c current code does not know how to handle this situation as it is only friction-based
+                    fTemp0           = sqrtf( fFEvent[i*16 +0]*fFEvent[i*16 +0] + fFEvent[i*16 +1]*fFEvent[i*16 +1] ); //combined shear stress on element
+                    fFEvent[i*16 +2] = MIN(0.0f, fFEvent[i*16 +2]);
+                    fTemp3           = INTERNALCOHESION + INTERNALFRICTION*-1.0f*fFEvent[i*16 +2]; //this defines the rock strength (as opposed to frictional strength)
+                    uFEvent[i*5 +2]  = (fTemp0 > fTemp3)*1u + (fTemp0 <= fTemp3)*uFEvent[i*5 +2]; //currently applied stresses exceed rock strength => yielding -element is "broken" => no elastic interaction (anymore) in the current EQ
+                    //-------------
+                    uTemp0           = (uFEvent[i*5 +1] == 0u)*uFEvent[i*5 +2] + (uFEvent[i*5 +1] != 0u)*0u;
+                    //-------------
+                    uFActivEl[uActElmL] = (uTemp0 == 1u)*i              + (uTemp0 != 1u)*uFActivEl[uActElmL]; //if element is broken the first time...
+                    uActElmL            = (uTemp0 == 1u)*(uActElmL+1u)  + (uTemp0 != 1u)*uActElmL;
+                    uFEvent[i*5 +1]     = (uTemp0 == 1u)*2u             + (uTemp0 != 1u)*uFEvent[i*5 +1];
+                    uFEvent[i*5 +3]     = (uTemp0 == 1u)*(uTotlRuptT)   + (uTemp0 != 1u)*uFEvent[i*5 +3];
+                    uFEvent[i*5 +4]     = (uTemp0 == 1u)*1u             + (uTemp0 != 1u)*uFEvent[i*5 +4];
                     //----------------------------------------------------
-                    fTemp1 = fFEvent[i*16 +3] *-1.0f*fFEvent[i*16 +2]; //current fault strength
-                    fTemp2 =   fFFric[i*6 +2] *-1.0f*fFEvent[i*16 +2]; //arrest fault strength
-                    fTemp3 = INTERNALCOHESION + INTERNALFRICTION*-1.0f*fFEvent[i*16 +2]; //this defines the rock strength (as opposed to frictional strength)
+                    fTemp1   = fFEvent[i*16 +3] *-1.0f*fFEvent[i*16 +2]; //current fault strength
+                    fTemp2   = fFFric[i*6 +2]   *-1.0f*fFEvent[i*16 +2]; //arrest fault strength
+                    fTemp3   = fTemp0 - fTemp1; //amount of excess stress above current friction level
+                    fTemp4   = fTemp0 - fTemp2; //amount of excess stress above arrest friction level
+                    fTemp5   = MAX(fTemp3, 0.0f) / fFRef[i*14 +2]; //slip amount to release excess stress on element that is currently present (the MAX ensures that it is really excess); use this instead of previous "fraction2startrupture" => is more consistent this way
                     //----------------------------------------------------
-                    uFEvent[i*5 +2] = (fTemp0 < fTemp3)*uFEvent[i*5 +2] + (fTemp0 >= fTemp3)*1u; //currently applied stresses exceed rock strength => yielding -element is "broken" => no elastic interaction (anymore) in the current EQ
-                    //----------------------------------------------------
-                    fTemp3 = fTemp0 - fTemp1; //amount of excess stress above current friction level
-                    fTemp4 = fTemp0 - fTemp2; //amount of excess stress above arrest friction level
-                    fTemp5 = MAX(fTemp3, 0.0f) / fFRef[i*14 +2]; //slip amount to release excess stress on element that is currently present (the MAX ensures that it is really excess); use this instead of previous "fraction2startrupture" => is more consistent this way
-                    //-----------------------------------------------------
-                    uTemp0   = (uFEvent[i*5 +1] == 0u)*1u           + (uFEvent[i*5 +1] != 0u)*0u;
+                    uTemp0   = (uFEvent[i*5 +2] == 0u)*1u           + (uFEvent[i*5 +2] != 0u)*0u; //not broken
                     uTemp0   = (fTemp5 >= fModPara[10])*uTemp0      + (fTemp5 < fModPara[10])*0u;
                     uTemp0   = (fTemp4 >= fFEvent[i*16 +10])*uTemp0 + (fTemp4 < fFEvent[i*16 +10])*0u;
-                    uFActivEl[uActElmL] = (uTemp0 == 1u)*i            + (uTemp0 != 1u)*uFActivEl[uActElmL];
-                    uActElmL            = (uTemp0 == 1u)*(uActElmL+1u)+ (uTemp0 != 1u)*uActElmL;
-                    uFEvent[i*5 +1]     = (uTemp0 == 1u)*1u           + (uTemp0 != 1u)*uFEvent[i*5 +1];
-                    uFEvent[i*5 +3]     = (uTemp0 == 1u)*(uTotlRuptT) + (uTemp0 != 1u)*uFEvent[i*5 +3];
                     //----------------------------------------------------
-                    uTemp0   = (uFEvent[i*5 +2] == 0u)*1u           + (uFEvent[i*5 +2] != 0u)*0u;
-                    uTemp0   = (uFEvent[i*5 +1] == 1u)*uTemp0       + (uFEvent[i*5 +1] != 1u)*0u;
-                    uTemp0   = (fTemp5 >= fModPara[10])*uTemp0      + (fTemp5 < fModPara[10])*0u;
-                    uTemp0   = (fTemp4 >= fFEvent[i*16 +10])*uTemp0 + (fTemp4 < fFEvent[i*16 +10])*0u;
-                    //------------------------------------------------
-                    fTemp5 = 0.0f;
-                    fTemp6 = 0.0f;
                     if (uTemp0 == 1u)
-                    {   uEQstillOn       += 1u;
+                    {   //------------------------
+                        uFActivEl[uActElmL] = (uFEvent[i*5 +1] == 0u)*i            + (uFEvent[i*5 +1] != 0u)*uFActivEl[uActElmL];
+                        uActElmL            = (uFEvent[i*5 +1] == 0u)*(uActElmL+1u)+ (uFEvent[i*5 +1] != 0u)*uActElmL;
+                        uFEvent[i*5 +1]     = (uFEvent[i*5 +1] == 0u)*1u           + (uFEvent[i*5 +1] != 0u)*uFEvent[i*5 +1];
+                        uFEvent[i*5 +3]     = (uFEvent[i*5 +1] == 0u)*(uTotlRuptT) + (uFEvent[i*5 +1] != 0u)*uFEvent[i*5 +3];
+                        //------------------------
+                        uEQstillOn       += 1u;
                         uMRFlgth          = uTotlRuptT +1u;
                         uFEvent[i*5 +4]   = uTotlRuptT - uFEvent[i*5 +3] +1u;
                         fFEvent[i*16 +15] = fabs( fModPara[9] *(fTemp3/fModPara[2]) *fModPara[7] );
                         //----------------------------
                         fTemp5 = -1.0f*((fTemp3/fTemp0) *fFEvent[i*16 +0]) / fFEvent[i*16 +4];
                         fTemp6 = -1.0f*((fTemp3/fTemp0) *fFEvent[i*16 +1]) / fFEvent[i*16 +5];
-                        fTemp7 = sqrtf(fTemp5*fTemp5 +fTemp6*fTemp6);
-                        fTemp5 = (fFEvent[i*16 +15] < fTemp7)*(fTemp5*(fFEvent[i*16 +15]/fTemp7))  +  (fFEvent[i*16 +15] >= fTemp7)*fTemp5;
-                        fTemp6 = (fFEvent[i*16 +15] < fTemp7)*(fTemp6*(fFEvent[i*16 +15]/fTemp7))  +  (fFEvent[i*16 +15] >= fTemp7)*fTemp6;
+                        fTemp7 = fFEvent[i*16 +15]/sqrtf(fTemp5*fTemp5 +fTemp6*fTemp6);//larger than 1 if more slip is permissible and vice versa
+                        fTemp7 = MIN(fTemp7, 1.0f);
+                        fTemp5*= fTemp7;
+                        fTemp6*= fTemp7;
                         //------------------------------------------------
                         uGlobPos = i +iFSTART[iRANK];
-                        fFslip[   uGlobPos*2 +0]  = fTemp5;                           fFslip[   uGlobPos*2 +1]  = fTemp6;
-                        fEQslipSD[uGlobPos*2 +0] += fTemp5;                           fEQslipSD[uGlobPos*2 +1] += fTemp6;
+                        fFslip[uGlobPos*2 +0]     = fTemp5;                 fFslip[uGlobPos*2 +1]     = fTemp6;
+                        fEQslipSD[uGlobPos*2 +0] += fTemp5;                 fEQslipSD[uGlobPos*2 +1] += fTemp6;
                         //------------------------------------------------
-                        uTemp0   = 2u*i*MAXMOMRATEFUNCLENGTH + 2u*(uTotlRuptT - uFEvent[i*5 +3]);
-                        fSTFslip[uTemp0 +0]       = fTemp5;                           fSTFslip[uTemp0 +1]       = fTemp6;
+                        uTemp0 = 2u*i*MAXMOMRATEFUNCLENGTH + 2u*(uTotlRuptT - uFEvent[i*5 +3]);
+                        fSTFslip[uTemp0 +0] = fTemp5;                          fSTFslip[uTemp0 +1] = fTemp6;
                         //------------------------------------------------
-                    }
-                    //------------------------------------------------
-                    fTemp5              = (uFEvent[i*5 +2] == 1u)*(-1.0f*((fTemp4/fTemp0) *fFEvent[i*16 +0])/fFEvent[i*16 +4]) + (uFEvent[i*5 +2] != 1u)*fTemp5;
-                    fTemp6              = (uFEvent[i*5 +2] == 1u)*(-1.0f*((fTemp4/fTemp0) *fFEvent[i*16 +1])/fFEvent[i*16 +5]) + (uFEvent[i*5 +2] != 1u)*fTemp6;
-                    fFEvent[i*16 +0]    = (uFEvent[i*5 +2] == 1u)*(fFEvent[i*16 +0] + fTemp5*fFEvent[i*16 +4])                 + (uFEvent[i*5 +2] != 1u)*fFEvent[i*16 +0];
-                    fFEvent[i*16 +1]    = (uFEvent[i*5 +2] == 1u)*(fFEvent[i*16 +1] + fTemp6*fFEvent[i*16 +5])                 + (uFEvent[i*5 +2] != 1u)*fFEvent[i*16 +1];
-                    fFEvent[i*16 +2]    = (uFEvent[i*5 +2] == 1u)*fFRef[i*14 +1]                                               + (uFEvent[i*5 +2] != 1u)*fFEvent[i*16 +2];
-                    //----------------------------
-                    fFEvent[i*16 +11]   = sqrtf(fTemp5*fTemp5 +fTemp6*fTemp6);
-                    fFEvent[i*16 +12]  += fFEvent[i*16 +11];
-                    fFEvent[i*16 +13]  += fTemp5;
-                    fFEvent[i*16 +14]  += fTemp6;
-                    fEQMomRel          += (fFEvent[i*16 +11]*fFRef[i*14 +0]);
-                    fMRFvals[uMRFlgth] += (fFEvent[i*16 +11]*fFRef[i*14 +0]);
-                    //----------------------------------------------------
-                }
-                //-----------------------------------------------------------------------
+                        fFEvent[i*16 +11]   = sqrtf(fTemp5*fTemp5 +fTemp6*fTemp6);
+                        fFEvent[i*16 +12]  += fFEvent[i*16 +11];
+                        fFEvent[i*16 +13]  += fTemp5;
+                        fFEvent[i*16 +14]  += fTemp6;
+                        fEQMomRel          += (fFEvent[i*16 +11]*fFRef[i*14 +0]);
+                        fMRFvals[uMRFlgth] += (fFEvent[i*16 +11]*fFRef[i*14 +0]);
+                        //------------------------------------------------
+                }   }
                 MPI_Allreduce(MPI_IN_PLACE, &uEQstillOn, 1, MPI_UNSIGNED, MPI_SUM, MPI_COMM_WORLD); 
                 //-----------------------------------------------------------------------
                 if (uEQstillOn > 0u)
@@ -1712,8 +1705,8 @@ int main(int argc, char **argv)
             //----------------------------------------------------------------------------
             if (uActElmG >= uMinElemNum4Cat)
             {   uEQcntr += 1u;
-                for (i = 0u; i < iSIZE; i++)        {   iStartPos[i] = 0;       iOffstPos[i] = 0;       }
-                for (i = 0u; i < 6;     i++)        {   fEQMeanVals[i] = 0.0f;                          }
+                memset(iStartPos,   0, iSIZE*sizeof(int));           memset(iOffstPos, 0, iSIZE*sizeof(int));
+                memset(fEQMeanVals, 0,     6*sizeof(float));
                 //-------------
                 for (i = 0u; i < uActElmL; i++)
                 {   uTemp1   = uFActivEl[i];
@@ -1725,6 +1718,7 @@ int main(int argc, char **argv)
                     fEQMeanVals[3] +=  fFRef[uTemp1*14 +0]; // rupture area
                     fEQMeanVals[4] +=  fTemp0;
                     fEQMeanVals[5] +=  sqrtf(fFTempVal[uTemp1*5 +0]*fFTempVal[uTemp1*5 +0] + fFTempVal[uTemp1*5 +1]*fFTempVal[uTemp1*5 +1]) - sqrtf(fFEvent[uTemp1*16 +0]*fFEvent[uTemp1*16 +0] + fFEvent[uTemp1*16 +1]*fFEvent[uTemp1*16 +1]); //stress drop
+                    
                     //-------------------------------------
                     uPatchID[i]  = uFActivEl[i] + iFSTART[iRANK];
                     ut0ofPtch[i] = uFEvent[uTemp1*5 +3];
@@ -1745,9 +1739,16 @@ int main(int argc, char **argv)
                 //---------------------------
                 for (i = 1; i < iSIZE; i++)        {    iStartPos[i]  = iStartPos[i-1] +iOffstPos[i-1];    } 
                 //----------------------------------------------
+                MPI_Gatherv(uPatchID,  iOffstPos[iRANK], MPI_UNSIGNED, uTemp2Wrt1, iOffstPos, iStartPos, MPI_UNSIGNED, 0, MPI_COMM_WORLD);
+                MPI_Gatherv(ut0ofPtch, iOffstPos[iRANK], MPI_UNSIGNED, uTemp2Wrt2, iOffstPos, iStartPos, MPI_UNSIGNED, 0, MPI_COMM_WORLD);
+                MPI_Gatherv(uStabType, iOffstPos[iRANK], MPI_UNSIGNED, uTemp2Wrt3, iOffstPos, iStartPos, MPI_UNSIGNED, 0, MPI_COMM_WORLD);
+                MPI_Gatherv(fPtchDTau, iOffstPos[iRANK], MPI_FLOAT,    fTemp2Wrt1, iOffstPos, iStartPos, MPI_FLOAT,    0, MPI_COMM_WORLD);
+                MPI_Gatherv(fPtchSlpH, iOffstPos[iRANK], MPI_FLOAT,    fTemp2Wrt2, iOffstPos, iStartPos, MPI_FLOAT,    0, MPI_COMM_WORLD);
+                MPI_Gatherv(fPtchSlpV, iOffstPos[iRANK], MPI_FLOAT,    fTemp2Wrt3, iOffstPos, iStartPos, MPI_FLOAT,    0, MPI_COMM_WORLD);
+                //----------------------------------------------
                 if (iRANK == 0)
                 {   fMaxMagnitude = (fEQMagn > fMaxMagnitude)*fEQMagn + (fEQMagn <= fMaxMagnitude)*fMaxMagnitude;
-                    if (uPlotCatalog2Screen == 1u) { fprintf(stdout,"%5u  EQtime: %6.4lf  (%6.4lf since last)   RuptArea: %8.2f   MeanSlip: %2.3f   MeanDtau: %3.3f   MRF %4u   ActivElems: %6u   EQMagn: %3.2f; Max_Magn: %3.2f\n", uEQcntr, dCurrTime, (dCurrTime-dLastEQtime), (fEQMeanVals[3]*1.0E-6f), fEQMeanVals[4], (fEQMeanVals[5]*1.0E-6f), uMRFlgth, uActElmG, fEQMagn, fMaxMagnitude);       }
+                    if (uPlotCatalog2Screen == 1u) { fprintf(stdout,"%5u  Time: %6.4lf  (%6.4lf since last)   RA: %8.2f   mSlip: %2.3f   mDtau: %3.3f   MRF %4u   Elem#: %6u   M: %3.2f;   M_max: %3.2f\n", uEQcntr, dCurrTime, (dCurrTime-dLastEQtime), (fEQMeanVals[3]*1.0E-6f), fEQMeanVals[4], (fEQMeanVals[5]*1.0E-6f), uMRFlgth, uActElmG, fEQMagn, fMaxMagnitude);       }
                     //----------------------------------------------
                     fseek(fp_CATALOG, 0, SEEK_SET);
                     fwrite(&uEQcntr,    sizeof(unsigned int), 1, fp_CATALOG);
@@ -1757,30 +1758,17 @@ int main(int argc, char **argv)
                     fwrite(fHypoLoc,    sizeof(float),        3, fp_CATALOG);
                     fwrite(fEQMeanVals, sizeof(float),        6, fp_CATALOG);
                     //----------------------------------------------
-                    if (uCatType > 1u)
-                    {   fwrite(&uMRFlgth, sizeof(unsigned int), 1,        fp_CATALOG);
-                        fwrite(fMRFvals,  sizeof(float),        uMRFlgth, fp_CATALOG);
-                    }
+                    fwrite(&uMRFlgth,   sizeof(unsigned int), 1, fp_CATALOG);
+                    fwrite(fMRFvals,    sizeof(float), uMRFlgth, fp_CATALOG);
+                    fwrite(&uActElmG,   sizeof(unsigned),     1, fp_CATALOG);
                     //----------------------------------------------
-                    if (uCatType > 2u)      {       fwrite(&uActElmG, sizeof(unsigned), 1, fp_CATALOG);         }
+                    fwrite( uTemp2Wrt1, sizeof(unsigned int), uActElmG, fp_CATALOG);
+                    fwrite( uTemp2Wrt2, sizeof(unsigned int), uActElmG, fp_CATALOG);
+                    fwrite( fTemp2Wrt1, sizeof(float),        uActElmG, fp_CATALOG);
+                    fwrite( fTemp2Wrt2, sizeof(float),        uActElmG, fp_CATALOG);
+                    fwrite( fTemp2Wrt3, sizeof(float),        uActElmG, fp_CATALOG);
+                    fwrite( uTemp2Wrt3, sizeof(unsigned int), uActElmG, fp_CATALOG);
                 }
-                //----------------------------------------------
-                if (uCatType > 2u)
-                {   MPI_Gatherv(uPatchID,  iOffstPos[iRANK], MPI_UNSIGNED, uTemp2Wrt1, iOffstPos, iStartPos, MPI_UNSIGNED, 0, MPI_COMM_WORLD);
-                    MPI_Gatherv(ut0ofPtch, iOffstPos[iRANK], MPI_UNSIGNED, uTemp2Wrt2, iOffstPos, iStartPos, MPI_UNSIGNED, 0, MPI_COMM_WORLD);
-                    MPI_Gatherv(uStabType, iOffstPos[iRANK], MPI_UNSIGNED, uTemp2Wrt3, iOffstPos, iStartPos, MPI_UNSIGNED, 0, MPI_COMM_WORLD);
-                    MPI_Gatherv(fPtchDTau, iOffstPos[iRANK], MPI_FLOAT,    fTemp2Wrt1, iOffstPos, iStartPos, MPI_FLOAT,    0, MPI_COMM_WORLD);
-                    MPI_Gatherv(fPtchSlpH, iOffstPos[iRANK], MPI_FLOAT,    fTemp2Wrt2, iOffstPos, iStartPos, MPI_FLOAT,    0, MPI_COMM_WORLD);
-                    MPI_Gatherv(fPtchSlpV, iOffstPos[iRANK], MPI_FLOAT,    fTemp2Wrt3, iOffstPos, iStartPos, MPI_FLOAT,    0, MPI_COMM_WORLD);
-                    
-                    if (iRANK == 0)
-                    {   fwrite( uTemp2Wrt1, sizeof(unsigned int), uActElmG, fp_CATALOG);
-                        fwrite( uTemp2Wrt2, sizeof(unsigned int), uActElmG, fp_CATALOG);
-                        fwrite( fTemp2Wrt1, sizeof(float),        uActElmG, fp_CATALOG);
-                        fwrite( fTemp2Wrt2, sizeof(float),        uActElmG, fp_CATALOG);
-                        fwrite( fTemp2Wrt3, sizeof(float),        uActElmG, fp_CATALOG);
-                        fwrite( uTemp2Wrt3, sizeof(unsigned int), uActElmG, fp_CATALOG);
-                }   }
                 //----------------------------------------------
                 dMeanRecurTime += (uEQcntr > 1u)*(dCurrTime - dLastEQtime) + (uEQcntr <= 1u)*0.0;
                 dLastEQtime     = dCurrTime; 
@@ -1795,7 +1783,7 @@ int main(int argc, char **argv)
                 float *fSTFvals1 = calloc( MAXMOMRATEFUNCLENGTH, sizeof *fSTFvals1 );
                 //----------------------------------------------
                 for (i = 0; i < iFOFFSET[iRANK]; i++)
-                {   lSTF_offset[iRANK] = (uFEvent[i*5 +1] == 0u)*lSTF_offset[iRANK]  +  (uFEvent[i*5 +1] == 1u)*(lSTF_offset[iRANK] + 2*sizeof(float) +4*sizeof(unsigned int) +2*uFEvent[i*5 +4]*sizeof(float) );
+                {   lSTF_offset[iRANK] = (uFEvent[i*5 +1] == 0u)*lSTF_offset[iRANK]  +  (uFEvent[i*5 +1] != 0u)*(lSTF_offset[iRANK] + 2*sizeof(float) +4*sizeof(unsigned int) +2*uFEvent[i*5 +4]*sizeof(float) );
                 }
                 //----------------------------------------------
                 MPI_Allreduce( MPI_IN_PLACE, lSTF_offset, iSIZE, MPI_LONG_LONG_INT, MPI_MAX, MPI_COMM_WORLD);
@@ -1817,7 +1805,7 @@ int main(int argc, char **argv)
                 lTemp0 = 1*sizeof(unsigned int) +3*sizeof(float); //this is "point/source number" at the beginning of the file => offset all start positions with it
                 //----------------------------------------
                 for (i = 0; i < iFOFFSET[iRANK]; i++)
-                {   if (uFEvent[i*5 +1] == 1u)
+                {   if (uFEvent[i*5 +1] != 0u)
                     {   uTemp0 = i + iFSTART[iRANK];
                         MPI_File_write_at(fp_STF, (lSTF_start[iRANK]+lTemp0),  &uTemp0,           1, MPI_UNSIGNED,  &STATUS);           lTemp0 += 1*sizeof(unsigned int);//global index of slipping element
                         MPI_File_write_at(fp_STF, (lSTF_start[iRANK]+lTemp0),  &uFEvent[i*5 +3],  1, MPI_UNSIGNED,  &STATUS);           lTemp0 += 1*sizeof(unsigned int);//RuptStart
@@ -1845,7 +1833,6 @@ int main(int argc, char **argv)
                             
                         fTemp0 = ran0(&lSeed);      fTemp0 = fTemp0*2.0f -1.0f;
                         fFFric[uTemp1*6 +0] = fFRef[uTemp1*14 +3] + (fFRef[uTemp1*14 +4] * fTemp0); //current static friction
-                        fFEvent[uTemp1*16 +3] = fFFric[uTemp1*6 +0]; //use static friction also as current friction
                         
                         fTemp0 = ran0(&lSeed);      fTemp0 = fTemp0*2.0f -1.0f;
                         fFFric[uTemp1*6 +1] = fFRef[uTemp1*14 +5] + (fFRef[uTemp1*14 +6] * fTemp0); // current dynamic friction
@@ -1861,33 +1848,39 @@ int main(int argc, char **argv)
                         
                         fFFric[uTemp1*6 +2]  = fTemp2 - fOvershootFract*(fTemp2-fFFric[uTemp1*6 +1]); //this is arrest friction
                         //---------------------------------
-                        fFEvent[uTemp1*16 +7] *= ((fTemp2 - fFFric[uTemp1*6 +2])/(fTemp2 - fFFric[uTemp1*6 +1])); //updated Dc value => now adjusted for the breakdown all the way to arrest stress
                         fFEvent[uTemp1*16 +10] = (fFFric[uTemp1*6 +1] - fFFric[uTemp1*6 +2])*-1.0f*fFRef[uTemp1*14 +1];//this is overshoot stress (difference between arrest (lower) and dynamic (higher) strength)
                         //--------------------------------------------------------------------
                 }   }
+                //--------------------
+                float fTempCurrFric;
                 for (i = 0u; i < iFOFFSET[iRANK]; i++)
-                {   fFRef[i*14 +13]  += sqrtf(fFEvent[i*16 +13]*fFEvent[i*16 +13] +fFEvent[i*16 +14]*fFEvent[i*16 +14]);
-                    
+                {   fFRef[i*14 +13] += sqrtf(fFEvent[i*16 +13]*fFEvent[i*16 +13] +fFEvent[i*16 +14]*fFEvent[i*16 +14]);
+                    fFEvent[i*16 +2] = fFRef[i*14 +1];
+                    fTempCurrFric    = fFFric[i*6 +0];
+                    //---------------------------------
+                    fTemp0           = sqrtf(fFEvent[i*16 +0]*fFEvent[i*16 +0] + fFEvent[i*16 +1]*fFEvent[i*16 +1]);
+                    fTemp1           = fTempCurrFric *-1.0f*fFEvent[i*16 +2]; //current fault strength
+                    fTemp2           = MAX((fTemp0/fTemp1), 1.0f);
+                    fFEvent[i*16 +0] = (uFEvent[i*5 +2] == 1u)*(fFEvent[i*16 +0]/fTemp2) + (uFEvent[i*5 +2] != 1u)*fFEvent[i*16 +0];
+                    fFEvent[i*16 +1] = (uFEvent[i*5 +2] == 1u)*(fFEvent[i*16 +1]/fTemp2) + (uFEvent[i*5 +2] != 1u)*fFEvent[i*16 +1];
+                    //---------------------------------
+                    fTemp0           = sqrtf(fFEvent[i*16 +0]*fFEvent[i*16 +0] + fFEvent[i*16 +1]*fFEvent[i*16 +1]);
+                    uTemp0           = (fTemp0 > fTemp1)*1u           + (fTemp0 <= fTemp1)*0u;
+                    uTemp0           = (uFEvent[i*5 +2] == 0u)*uTemp0 + (uFEvent[i*5 +2] != 0u)*0u;
+                    fTempCurrFric    = (uTemp0 == 1u)*(fTemp0/(-1.0f*fFEvent[i*16 +2])) + (uTemp0 != 1u)*fTempCurrFric ; //this gives the friction value, required to "explain" the excess stress
+                    fTempCurrFric    = MIN(fTempCurrFric , INTERNALFRICTION);
+                    //---------------------------------
+                    fTemp1           = fTempCurrFric *-1.0f*fFEvent[i*16 +2]; //the new shear strength on element
+                    fTemp2           = MAX((fTemp0/fTemp1), 1.0f);
+                    fFEvent[i*16 +0] = (uTemp0 == 1u)*(fFEvent[i*16 +0]/fTemp2)           + (uTemp0 != 1u)*fFEvent[i*16 +0];
+                    fFEvent[i*16 +1] = (uTemp0 == 1u)*(fFEvent[i*16 +1]/fTemp2)           + (uTemp0 != 1u)*fFEvent[i*16 +1];
+                    //---------------------------------
+                    fFFric[i*6 +4]   = fTempCurrFric - fFFric[i*6 +0];
+                    //--------------------------------------------------------------------
                     uFEvent[i*5 +1]   = 0u;         uFEvent[i*5 +2]   = 0u;         uFEvent[i*5 +3]   = 0u;         uFEvent[i*5 +4]   = 0u;
                     fFEvent[i*16 +11] = 0.0f;       fFEvent[i*16 +12] = 0.0f;       fFEvent[i*16 +13] = 0.0f;       fFEvent[i*16 +14] = 0.0f;       fFEvent[i*16 +15] = 0.0f;
-                   
-                    fFEvent[i*16 +2] = fFRef[i*14 +1];
-                    fFEvent[i*16 +3] = fFFric[i*6 +0];
-                    
-                    fTemp0 = sqrtf(fFEvent[i*16 +0]*fFEvent[i*16 +0] + fFEvent[i*16 +1]*fFEvent[i*16 +1]);
-                    fTemp1 = fFEvent[i*16 +3]*-1.0f*fFEvent[i*16 +2];
-                    
-                    if (fTemp0 >= fTemp1) 
-                    {   fFEvent[i*16 +3] = fTemp0/(-1.0f*fFEvent[i*16 +2]); //this gives the friction value, required to "explain" the excess stress
-                        fFEvent[i*16 +3] = (fFEvent[i*16 +3] < INTERNALFRICTION)*fFEvent[i*16 +3] + (fFEvent[i*16 +3] >= INTERNALFRICTION)*INTERNALFRICTION;
-                        
-                        fTemp1 = fFEvent[i*16 +3]*-1.0f*fFEvent[i*16 +2]; //the new (combined) shear stress the element can hold
-                        
-                        fFEvent[i*16 +0] *=  MIN((fTemp1/fTemp0), 1.0f); //remove stresses exceeding the rock strength
-                        fFEvent[i*16 +1] *=  MIN((fTemp1/fTemp0), 1.0f); //otherwise, stresses are NOT modified after leaving EQ
-                    } 
-                    fFFric[i*6 +4] = fFEvent[i*16 +3] - fFFric[i*6 +0];
-                } 
+                    //--------------------------------------------------------------------
+                }
             }// reset friction parameters and prepare for next event
             //----------------------------------------------------------------------------
             //----------------------------------------------------------------------------
